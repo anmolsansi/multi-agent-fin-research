@@ -1,0 +1,22 @@
+# Example workflow — rename to build_index.yml and uncomment later.
+# name: Build Index
+# on:
+#   schedule:
+#     - cron: "20 7 * * *"
+#   workflow_dispatch: {}
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     permissions: { contents: write }
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-python@v5
+#         with: { python-version: "3.11" }
+#       - run: pip install -r requirements.txt
+#       - run: python -c "from dags.ingest_pipeline import run_pipeline; run_pipeline()"
+#       - run: |
+#           git config user.name "github-actions"
+#           git config user.email "actions@github.com"
+#           git add indices/*
+#           git commit -m "Update FAISS index" || echo "No changes"
+#           git push
